@@ -1,0 +1,24 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ActivityCard from "../components/ActivityCard";
+import { Heading, Text, Container } from "@noahwright/design";
+import { activities } from "../data/activities";
+---
+
+<BaseLayout title="Home">
+  <Container padding="lg" itemSpacing="lg">
+    <Heading level={1} align="center">
+      Team activities for working from home
+    </Heading>
+    <Text align="center" tone="muted">
+      A growing pile of dumb little games and team-building activities. No
+      backend, no sign-up — just pick one and go.
+    </Text>
+
+    <div class="activity-grid">
+      {activities.map((activity) => (
+        <ActivityCard activity={activity} />
+      ))}
+    </div>
+  </Container>
+</BaseLayout>

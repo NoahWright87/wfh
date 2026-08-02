@@ -1,0 +1,50 @@
+---
+import "@noahwright/design/styles.css";
+import "../styles/global.css";
+import SiteHeader from "../components/SiteHeader";
+import SiteFooter from "../components/SiteFooter";
+
+export interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Dumb little games and team-building activities for remote teams." } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title} · WFH Activities</title>
+    <meta name="description" content={description} />
+    <link rel="stylesheet" href="/theme.css" />
+    <!-- Applies the saved/system theme before first paint to avoid a light/dark flash. -->
+    <script is:inline>
+      (function () {
+        try {
+          var stored = localStorage.getItem("nw-theme-mode");
+          var mode =
+            stored === "dark" || stored === "light"
+              ? stored
+              : window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches
+                ? "dark"
+                : "light";
+          document.documentElement.dataset.theme = mode;
+        } catch (e) {
+          // localStorage/matchMedia unavailable — default light theme from CSS stands.
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div class="nw-layout">
+      <SiteHeader client:load />
+      <main class="nw-layout__content">
+        <slot />
+      </main>
+      <SiteFooter />
+    </div>
+  </body>
+</html>
