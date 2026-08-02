@@ -1,0 +1,37 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { Heading, Text, Card, Container } from "@noahwright/design";
+import "../../../styles/buzzword-bingo.css";
+---
+
+<BaseLayout
+  title="Buzzword Bingo"
+  description="Classic corporate buzzword bingo for your next meeting. One host calls words from a shared screen; everyone else plays along on their own device."
+>
+  <Container padding="lg" itemSpacing="lg">
+    <Heading level={1} align="center">Buzzword Bingo</Heading>
+    <Text align="center" tone="muted">
+      One person shares their screen and calls out buzzwords. Everyone else
+      opens the Player view on their own device and marks their card. No
+      sign-up, no room code — just open both pages and go.
+    </Text>
+
+    <div class="role-picker">
+      <Card
+        href="/activities/buzzword-bingo/host"
+        title="🖥️ Host"
+        subtitle="Share this screen with the group"
+      >
+        <Text>Reveals buzzwords one at a time for everyone to hear.</Text>
+      </Card>
+
+      <Card
+        href="/activities/buzzword-bingo/player"
+        title="🎟️ Player"
+        subtitle="Open on your own device"
+      >
+        <Text>Generates your own card. Tap words as the host calls them.</Text>
+      </Card>
+    </div>
+  </Container>
+</BaseLayout>

@@ -5,12 +5,24 @@ export type Activity = {
   tags: string[];
   duration: string;
   groupSize: string;
+  /** Path to the activity's page, once it's built. Omit while it's still a placeholder. */
+  href?: string;
 };
 
 // Placeholder activities for the shell. Each one will eventually get its own
 // page/mini-app under src/pages/activities/[slug]. None of these require a
 // backend — everything runs client-side once the static page loads.
 export const activities: Activity[] = [
+  {
+    slug: "buzzword-bingo",
+    title: "Buzzword Bingo",
+    description:
+      "One host calls out corporate buzzwords from a shared screen; everyone else marks their own card.",
+    tags: ["game", "no-prep"],
+    duration: "10-20 min",
+    groupSize: "any",
+    href: "/activities/buzzword-bingo/",
+  },
   {
     slug: "two-truths-and-a-lie",
     title: "Two Truths and a Lie",
