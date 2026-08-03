@@ -1,0 +1,11 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { Container } from "@noahwright/design";
+import HostBoard from "../../../components/games/buzzword-bingo/HostBoard";
+---
+
+<BaseLayout title="Buzzword Bingo · Host" description="Host view for Buzzword Bingo — share this screen with the group.">
+  <Container padding="lg" itemSpacing="lg">
+    <HostBoard client:load />
+  </Container>
+</BaseLayout>

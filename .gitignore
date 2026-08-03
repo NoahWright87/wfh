@@ -1,0 +1,19 @@
+# build output
+dist/
+.astro/
+
+# generated at build time (see scripts/build-theme.ts)
+public/theme.css
+
+# dependencies
+node_modules/
+
+# logs
+npm-debug.log*
+
+# environment
+.env
+.env.production
+
+# editor
+.DS_Store

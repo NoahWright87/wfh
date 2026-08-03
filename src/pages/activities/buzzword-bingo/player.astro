@@ -1,0 +1,11 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { Container } from "@noahwright/design";
+import PlayerCard from "../../../components/games/buzzword-bingo/PlayerCard";
+---
+
+<BaseLayout title="Buzzword Bingo · Player" description="Player view for Buzzword Bingo — mark your card as the host calls words.">
+  <Container padding="lg" itemSpacing="lg">
+    <PlayerCard client:load />
+  </Container>
+</BaseLayout>

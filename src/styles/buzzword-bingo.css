@@ -1,0 +1,83 @@
+.bingo-card {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--spacing-xs, 0.5rem);
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.bingo-cell {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--spacing-sm, 0.75rem);
+  font-size: var(--text-sm, 0.875rem);
+  font-weight: 600;
+  line-height: 1.2;
+  border: 2px solid var(--foreground);
+  border-radius: var(--radius, 0.5rem);
+  background: var(--background);
+  color: var(--foreground);
+  cursor: pointer;
+  transition:
+    background-color var(--duration-fast, 120ms) var(--ease-in-out, ease),
+    color var(--duration-fast, 120ms) var(--ease-in-out, ease);
+}
+
+.bingo-cell:hover {
+  background: color-mix(in srgb, var(--primary) 12%, var(--background));
+}
+
+.bingo-cell--marked {
+  background: var(--primary);
+  color: var(--background);
+  border-color: var(--primary);
+}
+
+.bingo-cell--free {
+  cursor: default;
+  background: color-mix(in srgb, var(--secondary) 20%, var(--background));
+}
+
+.bingo-banner {
+  text-align: center;
+  padding: var(--spacing-md, 1rem);
+  border-radius: var(--radius, 0.5rem);
+  background: var(--confirm);
+  color: var(--background);
+}
+
+.word-bank {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm, 0.75rem);
+  justify-content: center;
+}
+
+.called-word-display {
+  text-align: center;
+  padding: var(--spacing-xl, 2rem);
+  border-radius: var(--radius, 0.5rem);
+  border: 2px solid var(--primary);
+  min-height: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.called-history {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs, 0.5rem);
+  justify-content: center;
+}
+
+.role-picker {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--spacing-lg, 1.5rem);
+  max-width: 640px;
+  margin: 0 auto;
+}
