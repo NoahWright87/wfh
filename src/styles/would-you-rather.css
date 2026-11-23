@@ -1,0 +1,68 @@
+.wyr {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg, 1.5rem);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.wyr-options {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: stretch;
+  gap: var(--spacing-md, 1rem);
+}
+
+.wyr-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm, 0.75rem);
+  padding: var(--spacing-xl, 2rem) var(--spacing-md, 1rem);
+  border: 2px solid var(--primary);
+  border-radius: var(--radius, 0.5rem);
+  text-align: center;
+  font-size: var(--text-xl, 1.25rem);
+  font-weight: 600;
+  line-height: 1.3;
+  min-height: 10rem;
+}
+
+.wyr-option--b {
+  border-color: var(--secondary);
+}
+
+.wyr-option__letter {
+  font-size: var(--text-2xl, 1.5rem);
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.wyr-option--b .wyr-option__letter {
+  color: var(--secondary);
+}
+
+.wyr-or {
+  align-self: center;
+  font-weight: 700;
+  color: var(--foreground);
+  opacity: 0.6;
+}
+
+.wyr-actions {
+  display: flex;
+  gap: var(--spacing-sm, 0.75rem);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 560px) {
+  .wyr-options {
+    grid-template-columns: 1fr;
+  }
+
+  .wyr-or {
+    justify-self: center;
+  }
+}

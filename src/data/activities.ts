@@ -40,6 +40,7 @@ export const activities: Activity[] = [
     tags: ["icebreaker", "quick"],
     duration: "5-10 min",
     groupSize: "2+",
+    href: "/activities/would-you-rather/",
   },
   {
     slug: "virtual-scavenger-hunt",
