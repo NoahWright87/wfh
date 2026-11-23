@@ -1,0 +1,19 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { Heading, Text, Container } from "@noahwright/design";
+import TruthsAndLies from "../../../components/games/truths-and-lies/TruthsAndLies";
+---
+
+<BaseLayout
+  title="Two Truths and a Lie"
+  description="Write a few truths and a lie about yourself, read them out, and let the team guess the lie. Pick how many of each."
+>
+  <Container padding="lg" itemSpacing="lg">
+    <Heading level={1} align="center">Two Truths and a Lie</Heading>
+    <Text align="center" tone="muted">
+      Everyone opens this page on their own device and writes privately. Then take turns reading
+      your list out loud while the team guesses the lie.
+    </Text>
+    <TruthsAndLies client:load />
+  </Container>
+</BaseLayout>
