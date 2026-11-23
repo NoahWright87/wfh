@@ -1,0 +1,19 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { Heading, Text, Container } from "@noahwright/design";
+import WouldYouRather from "../../../components/games/would-you-rather/WouldYouRather";
+---
+
+<BaseLayout
+  title="Would You Rather"
+  description="Rapid-fire either/or questions for the start of a meeting. Share this screen and let the team pick a side."
+>
+  <Container padding="lg" itemSpacing="lg">
+    <Heading level={1} align="center">Would You Rather</Heading>
+    <Text align="center" tone="muted">
+      Share this screen. Everyone answers A or B in chat, then one person from each side gets one
+      sentence to defend it.
+    </Text>
+    <WouldYouRather client:load />
+  </Container>
+</BaseLayout>
