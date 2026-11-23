@@ -1,0 +1,71 @@
+.tl-flow {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg, 1.5rem);
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.tl-counts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: var(--spacing-md, 1rem);
+}
+
+.tl-actions {
+  display: flex;
+  gap: var(--spacing-sm, 0.75rem);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.tl-tips {
+  margin: 0;
+  padding: var(--spacing-md, 1rem) var(--spacing-md, 1rem) var(--spacing-md, 1rem) 2.25rem;
+  border-radius: var(--radius, 0.5rem);
+  background: color-mix(in srgb, var(--secondary) 12%, var(--background));
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs, 0.5rem);
+}
+
+.tl-statements {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm, 0.75rem);
+  counter-reset: statement;
+}
+
+.tl-statement {
+  counter-increment: statement;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-md, 1rem);
+  padding: var(--spacing-md, 1rem);
+  border: 2px solid var(--primary);
+  border-radius: var(--radius, 0.5rem);
+  font-size: var(--text-lg, 1.125rem);
+  line-height: 1.4;
+}
+
+.tl-statement::before {
+  content: counter(statement) ".";
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.tl-statement__text {
+  flex: 1;
+}
+
+.tl-statement--lie {
+  border-color: var(--danger);
+  background: color-mix(in srgb, var(--danger) 10%, var(--background));
+}
+
+.tl-statement--truth {
+  border-color: var(--confirm);
+}

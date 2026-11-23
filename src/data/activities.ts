@@ -27,10 +27,11 @@ export const activities: Activity[] = [
     slug: "two-truths-and-a-lie",
     title: "Two Truths and a Lie",
     description:
-      "Everyone shares three 'facts' about themselves — only two are true. The team votes on the lie.",
+      "Everyone writes a few 'facts' about themselves, one of them made up. The team guesses the lie. Two truths and one lie by default, or pick your own mix.",
     tags: ["icebreaker", "no-prep"],
     duration: "10-15 min",
     groupSize: "4-20",
+    href: "/activities/two-truths-and-a-lie/",
   },
   {
     slug: "would-you-rather",
